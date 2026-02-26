@@ -303,7 +303,7 @@ export default function IntakeFlow() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:8001/api/v1/case/analyze', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/case/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(finalAnswers)
@@ -357,7 +357,7 @@ export default function IntakeFlow() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:8001/api/v1/case/analyze', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/case/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(answers)

@@ -71,7 +71,7 @@ class Settings(BaseSettings):
     SMS_SIMULATION_MODE: bool = True  # Set to False in production
     
     # CORS Settings
-    CORS_ORIGINS: str = "http://localhost:3000,http://localhost:3050,http://localhost:5173"
+    CORS_ORIGINS: str = "http://localhost:3000,http://localhost:3050,http://localhost:4000,http://localhost:5173"
     
     class Config:
         env_file = ".env"
