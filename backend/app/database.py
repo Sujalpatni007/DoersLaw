@@ -21,8 +21,13 @@ PRODUCTION UPGRADE:
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
 from app.config import get_settings
+import os
 
 settings = get_settings()
+
+# Ensure data directory exists for SQLite
+if "sqlite" in settings.DATABASE_URL:
+    os.makedirs("./data", exist_ok=True)
 
 # Create async engine
 # PRODUCTION: Add pool_size=20, max_overflow=10 for PostgreSQL
